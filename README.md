@@ -1,6 +1,7 @@
 # CssChallengePresentation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+Target of this project is to work on my css skills by implementing a gallery where i will solve all challenges from https://100dayscss.com/ page
 
 ## Development server
 
