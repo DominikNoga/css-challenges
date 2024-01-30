@@ -1,3 +1,15 @@
 <div class="challenge-wrapper">
-    <app-challenge-renderer></app-challenge-renderer>
+    <div class="challenge-renderer">
+        <section class="challenge-info">
+            <span class="day-title">Day <span class="day-number">#{{challengeNumber}}</span></span>
+            <p>
+                To see the original page go <a class="see-original-link" target="_blank" href="https://100dayscss.com/days/{{challengeNumber}}/">here</a>
+            </p>
+        </section>
+        <section class="challenge-result">
+            <div class="frame">
+                <app-challenge-renderer [challengeNumber]="challengeNumber"></app-challenge-renderer>
+            </div>
+        </section>
+    </div>
 </div>

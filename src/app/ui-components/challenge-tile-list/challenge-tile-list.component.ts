@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ALLOWED_NUMBERS } from '../challenge-renderer/challenge-renderer.constants';
 
 @Component({
   selector: 'app-challenge-tile-list',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./challenge-tile-list.component.scss']
 })
 export class ChallengeTileListComponent implements OnInit {
+  readonly ALLOWED_NUMBERS = ALLOWED_NUMBERS;
 
   constructor() { }
 

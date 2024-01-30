@@ -7,13 +7,13 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./challenge-page.component.scss']
 })
 export class ChallengePageComponent implements OnInit {
-  id!: string;
+  challengeNumber!: string;
 
   constructor(private route: ActivatedRoute, private viewContainerRef: ViewContainerRef) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.id = params['id'];
+      this.challengeNumber = params['id'];
     });
   }
 }

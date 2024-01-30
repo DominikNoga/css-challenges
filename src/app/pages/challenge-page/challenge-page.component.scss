@@ -1,0 +1,38 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/global-variables.scss';
+
+.challenge-wrapper {
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+
+    .challenge-renderer {
+        width: $page-content-width;
+        padding: $default-gap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .challenge-info {
+            font-size: 1.2rem;
+
+            .day-title {
+                font-size: 3rem;
+                font-weight: 600;
+            }
+
+            .day-number {
+                color: rgb(28, 69, 252);
+            }
+
+            .see-original-link {
+                font-weight: bold;
+            }
+        }
+
+        .challenge-result {
+            .frame {
+                @include challengeFrame();
+            }
+        }
+    }
+}

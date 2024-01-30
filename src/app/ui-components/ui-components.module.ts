@@ -4,6 +4,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ChallengeRendererComponent } from './challenge-renderer/challenge-renderer.component';
 import { ChallengeTileComponent } from './challenge-tile/challenge-tile.component';
 import { ChallengeTileListComponent } from './challenge-tile-list/challenge-tile-list.component';
+import { NoSuchChallengeComponent } from './no-such-challenge/no-such-challenge.component';
+import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -11,13 +14,20 @@ import { ChallengeTileListComponent } from './challenge-tile-list/challenge-tile
     FooterComponent,
     ChallengeRendererComponent,
     ChallengeTileComponent,
-    ChallengeTileListComponent
+    ChallengeTileListComponent,
+    NoSuchChallengeComponent
   ],
-  imports: [],
+  imports: [
+    RouterModule,
+    CommonModule
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    ChallengeRendererComponent
+    ChallengeRendererComponent,
+    ChallengeTileComponent,
+    ChallengeTileListComponent,
+    NoSuchChallengeComponent
   ]
 })
 export class AppUiComponentsModule { }
