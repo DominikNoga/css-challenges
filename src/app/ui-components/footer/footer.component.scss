@@ -1,0 +1,13 @@
+@import '../../../styles/mixins.scss';
+
+.footer {
+    @include headerAndFooterDefaultStyles();
+    display: flex;
+    @include simpleFlexLayout($align-items: center);
+    .footer-text {
+        font-size: 1.5rem;
+    }
+    .footer-sub-text {
+        
+    }
+}

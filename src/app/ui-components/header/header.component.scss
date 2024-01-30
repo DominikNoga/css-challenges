@@ -1,0 +1,10 @@
+@import '../../../styles/mixins.scss';
+
+.app-header {
+    @include headerAndFooterDefaultStyles();
+    @include simpleFlexLayout($direction: row, $justify-content: center);
+    .title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}

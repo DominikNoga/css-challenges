@@ -1,0 +1,53 @@
+@import './global-variables.scss';
+
+@mixin fontHoverWhite() {
+    &:hover {
+        color: white;
+    }
+}
+
+@mixin hoverEffect($cursor: pointer) {
+    &:hover {
+        cursor: $cursor;
+        @content;
+    }
+}
+
+@mixin bgGradient {
+    $end-color: #0987cf;
+    $start-color: #1dbfff;
+    background-color: $end-color;
+    background-image: linear-gradient(315deg, $end-color 0%, $start-color)
+}
+
+@mixin headerAndFooterDefaultStyles {
+    @include bgGradient();
+    color: white;
+    padding: 1rem;
+}
+
+@mixin basicBoxShadow($width, $opacity) {
+    box-shadow: 0 0 $width rgba(black, $opacity);
+}
+
+@mixin addSimpleTransition($property, $time: .3s, $before-transition-value, $after-transition-value, $cursor: pointer) {
+    transition: #{$property} $time;
+    #{$property}: $before-transition-value;
+    will-change: #{$property};
+
+    @include hoverEffect($cursor) {
+        #{$property}: $after-transition-value;
+    }
+}
+
+@mixin addOpacityTransition($time: .3s, $before-transition-value: 1, $after-transition-value: .9, $cursor: pointer) {
+    @include addSimpleTransition(opacity, $time, $before-transition-value, $after-transition-value, $cursor);
+}
+
+@mixin simpleFlexLayout($direction: column, $align-items: default, $justify-content: default, $gap: $default-gap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
