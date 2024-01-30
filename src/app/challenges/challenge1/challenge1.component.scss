@@ -1,0 +1,74 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+    $starting-color: #4d44a4;
+    $finishing-color: #4ec4c9;
+    background-color: $starting-color;
+    background-image: linear-gradient(45deg, $starting-color, $finishing-color);
+    height: 400px;
+    color: white;
+    width: 100%;
+    padding: 100px;
+
+    .content {
+        $number-size: 100px;
+        @include simpleFlexLayout($align-items: center, $gap: 0);
+        > * {
+            height: min-content;
+        }
+        .number {
+            @include simpleFlexLayout($direction: row, $gap: -20px);
+
+            .one {
+                z-index: 3;
+                translate: 10px 0;
+                .one-1 {
+                    width: $number-size/4;
+                    border-radius: .25rem;
+                    height: $number-size;
+                    background-color: white;
+                    @include basicBoxShadow(.5rem, .3);
+                    z-index: 3;
+                }
+
+                .one-2 {
+                    position: absolute;
+                    height: $number-size/2;
+                    width: $number-size/4;
+                    background-color: white;
+                    @include basicBoxShadow(.5rem, .3);
+                    top: 2px;
+                    z-index: -1;
+                    left: $number-size*(-1)/6;
+                    rotate: 45deg;
+                }
+            }
+
+            .zero-1 {
+                height: $number-size;
+                width: $number-size;
+                background-color: transparent;
+                border-radius: 50%;
+                border: 20px solid white;
+                z-index: 2;
+                @include basicBoxShadow(.5rem, .3);
+            }
+
+            .zero-2 {
+                @extend .zero-1;
+                translate: -10px 0;
+                z-index: 1;
+            }
+        }
+
+        .days {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+        .challenge {
+            font-size: 1.5rem;
+        }
+    }
+}
