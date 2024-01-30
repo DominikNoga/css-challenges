@@ -1,0 +1,15 @@
+@import '../styles/global-variables.scss';
+
+.content-wrapper {
+    font-family: $primary-font;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    > * {
+        width: 100%;
+    }
+    .router-content {
+        flex: 1;
+    }
+}
