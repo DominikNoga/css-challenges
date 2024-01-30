@@ -1,5 +1,12 @@
 @import './global-variables.scss';
 
+@mixin challengeFrame($width: 400px, $height: 400px) {
+    background-color: white;
+    box-shadow: 0 0 .5rem rgba(black, .3);
+    width: $width;
+    height: $height;
+}
+
 @mixin fontHoverWhite() {
     &:hover {
         color: white;

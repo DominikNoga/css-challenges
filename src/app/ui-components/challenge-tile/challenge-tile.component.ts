@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-challenge-tile',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./challenge-tile.component.scss']
 })
 export class ChallengeTileComponent implements OnInit {
+  @Input() challengeNumber!: string;
 
   constructor() { }
 

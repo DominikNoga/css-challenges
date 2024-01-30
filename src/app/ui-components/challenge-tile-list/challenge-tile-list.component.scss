@@ -1,0 +1,6 @@
+@import '../../../styles/mixins.scss';
+
+.challenge-tile-list {
+    @include simpleFlexLayout($direction: row);
+    flex-wrap: wrap;
+}

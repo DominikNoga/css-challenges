@@ -1,1 +1,5 @@
-<p>challenge-tile works!</p>
+<a [routerLink]="['/challenge', challengeNumber]" class="no-decorated-link">
+    <div class="challenge-tile" title="See challenge {{challengeNumber}}">
+        <app-challenge-renderer [challengeNumber]="challengeNumber"></app-challenge-renderer>
+    </div>
+</a>

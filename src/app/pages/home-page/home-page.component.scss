@@ -1,0 +1,12 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/global-variables.scss';
+
+.content-wrapper {
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+    
+    .main-content {
+        width: $page-content-width;
+    }
+}
