@@ -1,1 +1,7 @@
-<p>challenge2 works!</p>
+<div class="burger-wrapper" (click)="setAnimationClass()">
+    <div class="burger">
+        <span class="bar" [ngClass]="getAnimationClass('top-bar')"></span>
+        <span class="bar" [ngClass]="getAnimationClass('middle-bar')"></span>
+        <span class="bar" [ngClass]="getAnimationClass('bottom-bar')"></span>
+    </div>
+</div>

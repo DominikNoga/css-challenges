@@ -3,6 +3,8 @@
 @mixin challengeFrame($width: 400px, $height: 400px) {
     background-color: white;
     box-shadow: 0 0 .5rem rgba(black, .3);
+    display: grid;
+    place-items: center;
     width: $width;
     height: $height;
 }

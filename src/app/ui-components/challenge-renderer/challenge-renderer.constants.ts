@@ -10,3 +10,9 @@ export const COMPONENT_MAP: { [key: string]: Type<any> } = {
 };
 
 export const ALLOWED_NUMBERS = Object.keys(COMPONENT_MAP);
+
+export const FINISHED_ON: { [key: string]: string } = {
+    '1': '30.01.2024',
+    '2': '31.01.2024',
+    '3': 'in progress',
+}
