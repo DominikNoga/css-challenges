@@ -1,5 +1,13 @@
 @import './global-variables.scss';
 
+@mixin challengeContentWrapper($bgColor) {
+    background-color: $bgColor;
+    height: 400px;
+    width: 400px;
+    display: grid;
+    place-items: center;
+}
+
 @mixin challengeFrame($width: 400px, $height: 400px) {
     background-color: white;
     box-shadow: 0 0 .5rem rgba(black, .3);

@@ -1,0 +1,55 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
+
+$mainCircleSize: 175px;
+$skyHeight: 0.65;
+
+@mixin filledCircle($bgColor, $size) {
+    background-color: $bgColor;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+}
+
+.content-wrapper {
+    @include challengeContentWrapper(#272C34);
+
+    .pyramid-circle {
+        position: relative;
+        @include filledCircle(red, $mainCircleSize);
+        overflow: hidden;
+        .sky {
+            height: $skyHeight*$mainCircleSize;
+            width: $mainCircleSize;
+            background-color: #7DDFFC;
+        }
+
+        .pyramid-left {
+            $pyramid-size: 70px;
+            position: absolute;
+            top: $skyHeight*$mainCircleSize;
+            left: 10%;
+            background-color: white;
+            width: 60px;
+            height: 33px;
+            // clip-path: polygon(0.64*$pyramid-size 0.06*$pyramid-size, 0 $pyramid-size, 0.85*$pyramid-size $pyramid-size);
+        }
+
+        .pyramid-right {
+
+        }
+
+        .sun {
+            position: absolute;
+            top: 10%;
+            left: 40%;
+            @include filledCircle(#FFEF00, 35px);
+        }
+
+        .sand {
+            width: $mainCircleSize;
+            height: (1 - $skyHeight)*$mainCircleSize;
+            background-color: #F0DE75;
+        }
+    }
+}

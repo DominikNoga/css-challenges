@@ -10,11 +10,7 @@ $reverse-direction: reverse;
 }
 
 .burger-wrapper {
-    background-color: #3FAF82;
-    height: 400px;
-    width: 400px;
-    display: grid;
-    place-items: center;
+    @include challengeContentWrapper(#3FAF82);
     .burger {
         @include simpleFlexLayout();
         @include hoverEffect();
