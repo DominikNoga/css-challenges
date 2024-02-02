@@ -1,8 +1,24 @@
 @import '../../../styles/global-variables.scss';
 @import '../../../styles/mixins.scss';
 
-$mainCircleSize: 175px;
-$skyHeight: 0.65;
+$main-circle-size: 175px;
+$skyHeight: 0.7;
+$sun-size: $main-circle-size*$skyHeight*0.25;
+$pyramid-size: $main-circle-size*$skyHeight*0.6;
+$pyramid-left-side-width: 1.2;
+$pyramid-left-v1-x: 0.64;
+$pyramid-left-v2-x: 0.85;
+$pyramid-left-v3-x: 0.64;
+$pyramid-left-margin-left: 20%;
+$pyramid-width: $pyramid-size * $pyramid-left-side-width;
+$bg-color: #272C34;
+
+@mixin animation($name, $direction: normal, $delay: 0s) {
+    animation-name: $name;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: $direction;
+}
 
 @mixin filledCircle($bgColor, $size) {
     background-color: $bgColor;
@@ -12,44 +28,101 @@ $skyHeight: 0.65;
 }
 
 .content-wrapper {
-    @include challengeContentWrapper(#272C34);
+    @include challengeContentWrapper($bg-color);
 
     .pyramid-circle {
         position: relative;
-        @include filledCircle(red, $mainCircleSize);
+        @include filledCircle($bg-color, $main-circle-size);
         overflow: hidden;
+        @include animation(background-changing);
+        // cubic-bezier(0,.6,1,.53)
+        animation-timing-function: linear;
         .sky {
-            height: $skyHeight*$mainCircleSize;
-            width: $mainCircleSize;
+            height: $skyHeight*$main-circle-size;
+            width: $main-circle-size;
             background-color: #7DDFFC;
         }
 
+
         .pyramid-left {
-            $pyramid-size: 70px;
             position: absolute;
-            top: $skyHeight*$mainCircleSize;
-            left: 10%;
+            top: $skyHeight*$main-circle-size - $pyramid-size;
+            left: $pyramid-left-margin-left;
             background-color: white;
-            width: 60px;
-            height: 33px;
-            // clip-path: polygon(0.64*$pyramid-size 0.06*$pyramid-size, 0 $pyramid-size, 0.85*$pyramid-size $pyramid-size);
+            width: $pyramid-left-side-width*$pyramid-size;
+            height: $pyramid-size;
+            clip-path: polygon(64% 6%, 0 100%, 85% 100%);
         }
 
         .pyramid-right {
-
+            @extend .pyramid-left;
+            background-color: rgb(197, 195, 195);
+            left: calc($pyramid-left-margin-left + $pyramid-left-v1-x*$pyramid-width);
+            clip-path: polygon(0 6%, 21% 100%, 60% 100%);
         }
 
         .sun {
             position: absolute;
-            top: 10%;
-            left: 40%;
-            @include filledCircle(#FFEF00, 35px);
+            top: calc($skyHeight*$main-circle-size - $sun-size);
+            left: -1*$sun-size;
+            @include filledCircle(#FFEF00, $sun-size);
+            @include animation(sun-movement);
         }
 
         .sand {
-            width: $mainCircleSize;
-            height: (1 - $skyHeight)*$mainCircleSize;
+            width: $main-circle-size;
+            height: (1 - $skyHeight)*$main-circle-size;
             background-color: #F0DE75;
         }
+    }
+}
+
+@keyframes sun-movement {
+    0% {
+        left: -2*$sun-size;
+        top: calc($skyHeight*$main-circle-size - 1.5*$sun-size);
+    }
+
+    50% {
+        top: 5%;
+        left: calc($pyramid-left-margin-left + $pyramid-width*$pyramid-left-v1-x - $sun-size/2);
+    }
+
+    100% {
+        left: calc(100% + 0.5*$sun-size);
+        top: calc($skyHeight*$main-circle-size - $sun-size);
+    }
+}
+
+@keyframes background-changing {
+    from {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    68% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+$pyramid-darkest-grey: rgb(61, 61, 61);
+
+@keyframes shadow-movement {
+    from {}
+
+    to {}
+}
+
+@keyframes pyramid-color-change {
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: $pyramid-darkest-grey;
     }
 }
