@@ -17,5 +17,5 @@ export const FINISHED_ON: { [key: string]: string } = {
     '1': '30.01.2024',
     '2': '31.01.2024',
     '3': 'in progress',
-    '4': 'in progress',
+    '4': '12.02.2024',
 }
