@@ -1,0 +1,48 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
+@import './challenge4-variables';
+
+$animation-duration: 3s;
+$medium-delay: $animation-duration/4;
+$small-delay: $animation-duration/3;
+
+.content-wrapper {
+    @include challengeContentWrapper(#E56262);
+
+    .big-circle {
+        z-index: 1;
+        @include whiteCircle($big-circle-animation-name, $big-circle-size, $animation-duration);
+    }
+
+    .middle-circle {
+        z-index: 2;
+        @include whiteCircle($medium-circle-animation-name, $middle-circle-size, $animation-duration/2, $medium-delay);
+    }
+
+    .small-circle {
+        z-index: 3;
+        @include whiteCircle($small-circle-animation-name, $small-circle-size, $animation-duration/3, $small-delay);
+    }
+}
+
+@include scaleCircleAnimation($big-circle-animation-name, $initial-big-value, $middle-big-value);
+@include scaleCircleAnimation($medium-circle-animation-name, $initial-medium-value, $middle-medium-value);
+@include scaleCircleAnimation($small-circle-animation-name, $initial-small-value, $middle-small-value);
+
+/*
+    - big grows 0 - 2
+    - medium grows 1 - 2
+    - small grows 1.5 - 2
+    - small shirnks 2 - 2.5
+    - medium shirnks: 2 - 3
+    - big shirnks: 2 - 4;
+*/
+
+// BOX SHADOW PROPERTIES
+// offset-x, offset-y, blur-radius, spread-radius, inset, color
+/*
+    offset -> determines how far should be shadow from the original element
+    blur-radius -> The larger this value is, the bigger is the blur, so the shadow becomes bigger and lighter
+    spread-radius -> how much wider in every direction should the shadow be
+    inset -> if added the shadow goes inside the container(in the borders)
+*/

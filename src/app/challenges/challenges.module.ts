@@ -3,12 +3,14 @@ import { Challenge1Component } from './challenge1/challenge1.component';
 import { Challenge2Component } from './challenge2/challenge2.component';
 import { Challenge3Component } from './challenge3/challenge3.component';
 import { CommonModule } from "@angular/common";
+import { Challenge4Component } from './challenge4/challenge4.component';
 
 @NgModule({
   declarations: [
     Challenge1Component,
     Challenge2Component,
-    Challenge3Component
+    Challenge3Component,
+    Challenge4Component
   ],
   imports: [
     CommonModule
@@ -16,7 +18,8 @@ import { CommonModule } from "@angular/common";
   exports: [
     Challenge1Component,
     Challenge2Component,
-    Challenge3Component
-  ]
+    Challenge3Component,
+    Challenge4Component
+  ],
 })
 export class AppChallengesModule { }
