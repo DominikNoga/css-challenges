@@ -36,3 +36,13 @@
         }
     }
 }
+
+
+@media screen and (max-width: 860px) {
+    .challenge-renderer {
+        display: flex !important;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1em;
+    }
+}

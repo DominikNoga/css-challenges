@@ -1,0 +1,15 @@
+$animation-duration: 1.5s;
+$big-circle-size: 80px;
+$middle-circle-size: 40px;
+$small-circle-size: 15px;
+
+@mixin whiteCircle($diameter, $delay: 0s) {
+    width: $diameter;
+    height: $diameter;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    @include basicBoxShadow(2px, .4);
+    animation: scaleCircle $animation-duration ease-in-out infinite $delay alternate both;
+}

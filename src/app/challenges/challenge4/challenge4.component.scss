@@ -1,0 +1,44 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
+@import './challenge4-variables';
+
+
+.content-wrapper {
+    @include challengeContentWrapper(#E56262);
+    .big-circle {
+        @include whiteCircle($big-circle-size);
+    }
+    .middle-circle {
+        @include whiteCircle($middle-circle-size, $animation-duration);
+    }
+    .small-circle {
+        @include whiteCircle($small-circle-size, 2*$animation-duration);
+    }
+}
+
+@keyframes scaleCircle {
+    from {
+        scale: 0;
+        box-shadow: 2px 2px 2px 3px rgba(black, .2);
+    }
+    to {
+        scale: 1;
+        box-shadow: 2px 2px 2px 3px rgba(black, .2);
+    }
+}
+
+@keyframes bigCircle {
+    0% {
+
+    }
+
+}
+
+/*
+    - big grows 0 - 1
+    - medium starts growing after that 1 - 2
+    - smallest after that 2 - 3
+    - smallest shrinks 3 - 4
+    - medium shirnks 4 - 5
+    - big shirnks 5 - 6
+*/
