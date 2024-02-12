@@ -1,15 +1,45 @@
-$animation-duration: 1.5s;
-$big-circle-size: 80px;
-$middle-circle-size: 40px;
-$small-circle-size: 15px;
+$big-circle-size: 90px;
+$middle-circle-size: 60px;
+$small-circle-size: 30px;
+$big-circle-animation-name: scaleBigCircle;
+$medium-circle-animation-name: scaleMediumCircle;
+$small-circle-animation-name: scaleSmallCircle;
+$bezier: cubic-bezier(.15,.34,.97,.65);
+$bezier: linear;
+$initial-big-value: 2px 2px 2px 3px rgba(black, .2);
+$initial-medium-value: 2px 2px 2px 2px rgba(black, .2);
+$initial-small-value: 2px 2px 1px 1px rgba(black, .2);
+$middle-big-value: 2px 2px 8px 8px rgba(black, .2);
+$middle-medium-value: 2px 2px 5px 5px rgba(black, .2);
+$middle-small-value: 2px 2px 3px 3px rgba(black, .2);
 
-@mixin whiteCircle($diameter, $delay: 0s) {
+@mixin whiteCircle($name, $diameter, $duration, $delay: 0s) {
     width: $diameter;
     height: $diameter;
     border-radius: 50%;
     display: grid;
     place-items: center;
     background-color: white;
-    @include basicBoxShadow(2px, .4);
-    animation: scaleCircle $animation-duration ease-in-out infinite $delay alternate both;
+    animation: $name $duration $bezier infinite $delay;
+}
+
+@mixin scaleCircleAnimation($name, $initial-value, $middle-value) {
+    @keyframes #{$name} {
+        from {
+            scale: 0;
+            box-shadow: $initial-value;
+        }
+        50% {
+            scale: 1;
+            box-shadow: $middle-value;
+        }
+        55% {
+            scale: 1;
+            box-shadow: $middle-value;
+        }
+        to {
+            scale: 0;
+            box-shadow: $initial-value;
+        }
+    }
 }
