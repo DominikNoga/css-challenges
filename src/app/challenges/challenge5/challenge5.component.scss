@@ -1,0 +1,57 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
+@import './challenge5-variables';
+
+.content-wrapper {
+    @include challengeContentWrapper($bg-color);
+    .report {
+        background-color: $report-bg-color;
+        .report-header {
+            @include simpleFlexLayout(row, center, space-between, 3*$default-gap);
+            color: white;
+            background-color: $header-color;
+            padding: $default-gap*.5;
+            .title-and-timespan {
+                .title {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .report-content {
+            padding: $default-gap*.5;
+            .content-header {
+                @include simpleFlexLayout(row, center, flex-end);
+                .legend {
+                    @include simpleFlexLayout(row);
+                    .legend-item {
+                        font-size: .7rem;
+                        @include simpleFlexLayout(row, center, $gap: .4rem);
+                        .views-mark {
+                            background-color: $views-mark-color;
+                            width: 1em;
+                            height: 3px;
+                            border-radius: 30%;
+                        }
+                        .purchases-mark {
+                            @extend .views-mark;
+                            background-color: $purchases-mark-color;
+                        }
+                    }
+                }
+            }
+            .chart {
+                height: min-content;
+                .data-red {
+                }
+
+                .data-blue {
+                    @extend .data-red;
+                }
+            }
+        }
+        .text-smaller {
+            font-size: .8rem;
+        }
+    }
+}

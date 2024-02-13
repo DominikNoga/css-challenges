@@ -1,0 +1,40 @@
+<div class="content-wrapper">
+    <div class="report">
+        <header class="report-header">
+            <div class="title-and-timespan">
+                <div class="title">Weekly report</div>
+                <div class="text-smaller">01.Feb - 07.Feb</div>
+            </div>
+            <div class="revenue">
+                <div class="text-smaller">Revenue</div>
+                <div class="revenue-amount">$ {{revenue}}</div>
+            </div>
+        </header>
+        <div class="report-content">
+            <div class="content-header">
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="views-mark"></div>
+                        <span>Views</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="purchases-mark"></div>
+                        <span>Purchases</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <div class="data-red">
+                    <svg>
+                        <polyline points="0, 46 50,12 90,23 130,11 171,38 211,48 251,19" stroke="red" fill="none"></polyline>    
+                    </svg>
+                </div>
+                <div class="data-blue">
+                    <svg>
+                        <polyline points="0, 46 100,12 140,23 180,11 221,38 261,48 301,19" stroke="blue" fill="none"></polyline>    
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
