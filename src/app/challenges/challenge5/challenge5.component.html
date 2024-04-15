@@ -24,17 +24,47 @@
                 </div>
             </div>
             <div class="chart">
+                <div class="lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
                 <div class="data-red">
                     <svg>
-                        <polyline points="0, 46 50,12 90,23 130,11 171,38 211,48 251,19" stroke="red" fill="none"></polyline>    
+                        <polyline [attr.points]="getPolylinePoints(dataRedPoints)" stroke="red" fill="none"></polyline>
                     </svg>
+                    <div class="points">
+                        <div
+                            class="point"
+                            *ngFor="let point of dataRedPoints"
+                            [ngStyle]="{
+                                'left': (point.x - 4) + 'px',
+                                'top': (point.y - 4) + 'px',
+                                'background-color': 'red'
+                            }"></div>
+                    </div>
                 </div>
                 <div class="data-blue">
                     <svg>
-                        <polyline points="0, 46 100,12 140,23 180,11 221,38 261,48 301,19" stroke="blue" fill="none"></polyline>    
+                        <polyline [attr.points]="getPolylinePoints(dataBluePoints)" stroke="blue" fill="none"></polyline>
                     </svg>
+                    <div class="points">
+                        <div
+                            class="point"
+                            *ngFor="let point of dataBluePoints"
+                            [ngStyle]="{
+                                'left': (point.x - 4) + 'px',
+                                'top': (point.y - 4) + 'px',
+                                'background-color': 'blue'
+                            }"></div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="dates-row">
+            <span class="date-cell" *ngFor="let day of days">
+                {{day}}
+            </span>
         </div>
     </div>
 </div>
