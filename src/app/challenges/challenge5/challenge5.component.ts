@@ -18,8 +18,8 @@ export class Challenge5Component implements OnInit {
     { x: 90, y: 23 },
     { x: 130, y: 11 },
     { x: 171, y: 38 },
-    { x: 211, y: 48 },
-    { x: 271, y: 19 }
+    { x: 240, y: 48 },
+    { x: 285, y: 19 }
   ];
 
   readonly dataBluePoints = [
