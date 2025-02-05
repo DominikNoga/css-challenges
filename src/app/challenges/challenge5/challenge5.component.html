@@ -1,0 +1,70 @@
+<div class="content-wrapper">
+    <div class="report">
+        <header class="report-header">
+            <div class="title-and-timespan">
+                <div class="title">Weekly report</div>
+                <div class="text-smaller">01.Feb - 07.Feb</div>
+            </div>
+            <div class="revenue">
+                <div class="text-smaller">Revenue</div>
+                <div class="revenue-amount">$ {{revenue}}</div>
+            </div>
+        </header>
+        <div class="report-content">
+            <div class="content-header">
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="views-mark"></div>
+                        <span>Views</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="purchases-mark"></div>
+                        <span>Purchases</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <div class="lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="data-red">
+                    <svg>
+                        <polyline [attr.points]="getPolylinePoints(dataRedPoints)" stroke="red" fill="none"></polyline>
+                    </svg>
+                    <div class="points">
+                        <div
+                            class="point"
+                            *ngFor="let point of dataRedPoints"
+                            [ngStyle]="{
+                                'left': (point.x - 4) + 'px',
+                                'top': (point.y - 4) + 'px',
+                                'background-color': 'red'
+                            }"></div>
+                    </div>
+                </div>
+                <div class="data-blue">
+                    <svg>
+                        <polyline [attr.points]="getPolylinePoints(dataBluePoints)" stroke="blue" fill="none"></polyline>
+                    </svg>
+                    <div class="points">
+                        <div
+                            class="point"
+                            *ngFor="let point of dataBluePoints"
+                            [ngStyle]="{
+                                'left': (point.x - 4) + 'px',
+                                'top': (point.y - 4) + 'px',
+                                'background-color': 'blue'
+                            }"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dates-row">
+            <span class="date-cell" *ngFor="let day of days">
+                {{day}}
+            </span>
+        </div>
+    </div>
+</div>

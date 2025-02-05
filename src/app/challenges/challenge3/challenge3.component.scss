@@ -1,0 +1,188 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
+
+.content-wrapper {
+    @include challengeContentWrapper(rgb(39, 38, 38));
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn-fadeOut linear 4s infinite;
+}
+
+.circle-up-half {
+    background-color: rgb(21, 212, 255);
+    width: 100%;
+    height: 65%;
+}
+.circle-down-half {
+    background-color: rgb(207, 207, 122);
+    width: 100%;
+    height: 35%;
+}
+.pyramid-left {
+    position: absolute;
+    top: calc(65% - 35px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 70px;
+    clip-path: polygon(50% 0, 65% 100%, 50% 100%, 0 100%);
+    animation: pyramid-left-shadow 4s infinite;
+}
+
+.pyramid-right {
+    position: absolute;
+    top: calc(65% - 35px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 70px;
+    clip-path: polygon(50% 0, 100% 100%, 65% 100%, 65% 100%);
+    animation: pyramid-right-shadow 4s infinite;
+}
+
+.pyramid-ground {
+    position: absolute;
+    top: calc(65% + 50px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.147);
+    animation: pyramid-ground-shadow 4s infinite;
+}
+
+.sun {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: rgb(241, 250, 145);
+    position: absolute;
+    top: 0;
+    left: calc(50% - 17.5px);
+    transform-origin: center 110px;
+    animation: sun-rise-sun-set 4s infinite;
+}
+
+@keyframes pyramid-left-shadow {
+    0% {
+        background-color: rgb(202, 202, 202);
+    }
+    25% {
+        background-color: rgb(255, 255, 255);
+    }
+    50% {
+        background-color: rgb(255, 255, 255);
+        animation-timing-function: linear;
+    }
+    75% {
+        background-color: rgb(202, 202, 202);
+        animation-timing-function: linear;
+    }
+    100% {
+        background-color: rgb(154, 154, 154);
+    }
+}
+
+@keyframes pyramid-right-shadow {
+    0% {
+        background-color: rgb(81, 81, 81);
+    }
+    25% {
+        background-color: rgb(202, 202, 202);
+    }
+    50% {
+        background-color: rgb(202, 202, 202);
+        animation-timing-function: linear;
+    }
+    75% {
+        background-color: rgb(225, 244, 244);
+        animation-timing-function: linear;
+    }
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@keyframes pyramid-ground-shadow {
+    0% {
+        clip-path: polygon(15% 0, 85% 0, 100% 0, 15% 0);
+        animation-timing-function: ease-in-out;
+    }
+    25% {
+        clip-path: polygon(15% 0, 85% 0, 100% 25%, 15% 0);
+
+        animation-timing-function: ease-in;
+    }
+    50% {
+        clip-path: polygon(15% 0, 85% 0, 100% 25%, 15% 0);
+
+        animation-timing-function: ease-in;
+    }
+    60% {
+        clip-path: polygon(15% 0, 85% 0, 85% 20%, 15% 0);
+        animation-timing-function: linear;
+    }
+    70% {
+        clip-path: polygon(15% 0, 85% 0, 50% 15%, 15% 0);
+        animation-timing-function: linear;
+    }
+    90% {
+        clip-path: polygon(15% 0, 85% 0, 0 25%, 15% 0);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        clip-path: polygon(15% 0, 85% 0, 0 0, 15% 0);
+    }
+}
+
+@keyframes sun-rise-sun-set {
+    0% {
+        transform: rotate(-90deg);
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+    }
+    25% {
+        transform: rotate(-45deg);
+        opacity: 1;
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(-45deg);
+        opacity: 1;
+        animation-timing-function: ease-in;
+    }
+    70% {
+        transform: rotate(0deg);
+        animation-timing-function: linear;
+    }
+    90% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn-fadeOut {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in-out;
+    }
+    25% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
