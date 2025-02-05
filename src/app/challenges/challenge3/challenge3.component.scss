@@ -1,23 +1,15 @@
+@import '../../../styles/global-variables.scss';
+@import '../../../styles/mixins.scss';
 
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(39, 38, 38);
-    width: 400px;
-    height: 400px;
-    z-index: -1;
+.content-wrapper {
+    @include challengeContentWrapper(rgb(39, 38, 38));
 }
 
 .circle {
     width: 200px;
     height: 200px;
     border-radius: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     overflow: hidden;
     animation: fadeIn-fadeOut linear 4s infinite;
 }
