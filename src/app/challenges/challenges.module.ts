@@ -6,6 +6,12 @@ import { CommonModule } from "@angular/common";
 import { Challenge4Component } from './challenge4/challenge4.component';
 import { Challenge5Component } from './challenge5/challenge5.component';
 import { Challenge6Component } from './challenge6/challenge6.component';
+import { Challenge7Component } from './challenge7/challenge7.component';
+import { Challenge8Component } from './challenge8/challenge8.component';
+import { Challenge9Component } from './challenge9/challenge9.component';
+import { Challenge10Component } from './challenge10/challenge10.component';
+import { Challenge11Component } from './challenge11/challenge11.component';
+import { Challenge12Component } from './challenge12/challenge12.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +20,13 @@ import { Challenge6Component } from './challenge6/challenge6.component';
     Challenge3Component,
     Challenge4Component,
     Challenge5Component,
-    Challenge6Component
+    Challenge6Component,
+    Challenge7Component,
+    Challenge8Component,
+    Challenge9Component,
+    Challenge10Component,
+    Challenge11Component,
+    Challenge12Component
   ],
   imports: [
     CommonModule
