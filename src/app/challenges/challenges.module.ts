@@ -12,7 +12,7 @@ import { Challenge9Component } from './challenge9/challenge9.component';
 import { Challenge10Component } from './challenge10/challenge10.component';
 import { Challenge11Component } from './challenge11/challenge11.component';
 import { Challenge12Component } from './challenge12/challenge12.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 @NgModule({
   declarations: [
     Challenge1Component,
@@ -29,7 +29,8 @@ import { Challenge12Component } from './challenge12/challenge12.component';
     Challenge12Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     Challenge1Component,

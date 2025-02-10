@@ -2,11 +2,11 @@
 @import '../../../styles/mixins.scss';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
-// use only the available space inside the 400x400 frame
 $blue: #5f98cd;
 $blue-dark: #264057;
 $blue-light: #b2daff;
 .frame {
+    overflow: hidden;
     position: relative;
     @include challengeContentWrapper($blue-dark);
     color: #666666;
@@ -69,7 +69,7 @@ $blue-light: #b2daff;
                 height: 7px;
                 background: $blue-light;
                 position: absolute;
-                top: -2px; // (7-3) / 2 = 2px;
+                top: -2px;
                 right: 0px;
                 border-radius: 4px;
                 transition: all 0.2s ease-in-out;
@@ -104,7 +104,7 @@ $blue-light: #b2daff;
             padding: 0 17px;
             font-size: 17px;
             color: #666;
-            pointer-events: none; // 阻止该元素作为鼠标事件对象的target值
+            pointer-events: none;
             transform: translateX(15px);
             opacity: 0;
             transition: all 0.3s ease-in-out;
@@ -214,11 +214,10 @@ $blue-light: #b2daff;
         list-style: none;
     }
     li {
-        color: #93b2cd;
+        color: #a7c2da;
         margin: 0;
-        padding: 18px 17px;
+        padding: 1rem;
         font-size: 14px;
-        line-size: 14px;
         cursor: pointer;
 
         &:hover {

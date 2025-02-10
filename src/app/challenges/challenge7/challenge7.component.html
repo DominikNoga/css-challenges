@@ -1,7 +1,7 @@
 <div class="frame">
-    <div class="panel">
+    <div class="panel" [ngClass]="{'show-menu': sideNavToggled}">
           <div class="header">
-              <div class="menu-icon">
+              <div class="menu-icon" (click)="toggleSideNav()">
                   <div class="dash-top"></div>
                   <div class="dash-bottom"></div>
                   <div class="circle"></div>
@@ -32,19 +32,19 @@
       <div class="menu">
           <ul>
               <li>
-                  <span class="fa fa-dashboard"></span>Dashboard
+                  <fa-icon [icon]="ICONS.dashboard"></fa-icon> Dashboard
               </li>
               <li>
-                  <span class="fa fa-user"></span>Profile
+                  <fa-icon [icon]="ICONS.user"></fa-icon> Profile
               </li>
               <li>
-                  <span class="fa fa-bell"></span>Notifications
+                  <fa-icon [icon]="ICONS.notifications"></fa-icon> Notifications
               </li>
               <li>
-                  <span class="fa fa-comments"></span>Messages
+                  <fa-icon [icon]="ICONS.messages"></fa-icon> Messages
               </li>
               <li>
-                  <span class="fa fa-gear"></span>Settings
+                  <fa-icon [icon]="ICONS.settings"></fa-icon> Settings
               </li>
           </ul>
       </div>
