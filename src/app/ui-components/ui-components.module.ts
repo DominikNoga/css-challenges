@@ -7,6 +7,7 @@ import { ChallengeTileListComponent } from './challenge-tile-list/challenge-tile
 import { NoSuchChallengeComponent } from './no-such-challenge/no-such-challenge.component';
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommonModule } from "@angular/common";
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     HeaderComponent,

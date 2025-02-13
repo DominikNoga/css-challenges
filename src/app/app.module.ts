@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppPagesModule } from './pages/pages.module';
 import { AppChallengesModule } from './challenges/challenges.module';
 import { AppUiComponentsModule } from './ui-components/ui-components.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppUiComponentsModule } from './ui-components/ui-components.module';
     AppRoutingModule,
     AppPagesModule,
     AppChallengesModule,
-    AppUiComponentsModule
+    AppUiComponentsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
